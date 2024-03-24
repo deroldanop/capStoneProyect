@@ -1,0 +1,32 @@
+.news-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.news-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.news-article {
+  margin-bottom: 20px;
+}
+
+.news-article h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.news-article p {
+  margin-bottom: 10px;
+}
+
+.news-article .source {
+  font-style: italic;
+}
+
+.news-footer {
+  display: flex;
+  justify-content: space-between;
+}

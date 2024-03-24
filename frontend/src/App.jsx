@@ -1,25 +1,35 @@
 import "./index.css";
-import React from 'react';
-import News from "../pages/News";
-import NavBar from "../components/NavBar";
+import "react-toastify/dist/ReactToastify.css";
+import React from "react";
+import NavBar from "./components/NavBar";
 
-import { Route, Routes } from 'react-router-dom';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
+import News from "./components/News.jsx";
+import NewsPage from "./components/NewsPage.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<News />} />
-        {/* <Route path='/Login' element={<Login />} /> */}
-        
-       
-      </Routes>
-    </>
+    <BrowserRouter>
+      <ToastContainer />
+      <AuthProvider>
+        <div>
+          <NavBar />
+          <div className="main-content">
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/news/:title" element={<NewsPage />} />
+            </Routes>
+          </div>
+        </div>
+      </AuthProvider>
+    </BrowserRouter>
   );
-  
 }
 
 export default App;
-
